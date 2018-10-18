@@ -1,4 +1,5 @@
-print "**Surbet tennis**"
+print "**Aide pour pronostic tennis**"
+
 
 #donnees entrantes:
 mise_totale_sur_joueur1 = 0
@@ -11,7 +12,8 @@ while nouveauchoix == 1:
   cotedeuxiemejoueur = float(raw_input("Cote deuxieme joueur:"))
   mise_totale_sur_joueur1 = 0
   mise_totale_sur_joueur2 = 0
-  surbet = ((1 / cotepremierjoueur) + (1 / cotedeuxiemejoueur))
+  surbet = (1 / cotepremierjoueur) + (1 / cotedeuxiemejoueur)
+  surbet2 = ((2 - ((1 / cotepremierjoueur) + (1 / cotedeuxiemejoueur))) * 100)
   cote_totale = cotepremierjoueur + cotedeuxiemejoueur
   cote_affine_mediane = cote_totale / 2
   cote_affine_joueur1 = 0
@@ -27,6 +29,7 @@ while nouveauchoix == 1:
   gain = 0
   gainfinal = 0
   gaindebut = 0
+  marge = 0
   # quel est la meilleure cote:
   meilleurecote = 0
     #calcul
@@ -62,7 +65,7 @@ while nouveauchoix == 1:
     gainfinal += gain - somme_en_jeux_totale
     print "---------> benefice: ", gainfinal, "euros"
     print "***************************************************"
-    print "pourcentage pour info:"
+    print "Probabilite de resultat selon Bookmaker pour info:"
     pourcentageplusjoueur2 += ((cotedeuxiemejoueur / cote_totale) * 100)
     print "1/", pourcentageplusjoueur2, "%", "de chance de gagner"
     pourcentageplusjoueur1 += ((cotepremierjoueur / cote_totale) * 100)
@@ -71,19 +74,29 @@ while nouveauchoix == 1:
     nouveauchoix = input("'1' pour relancer  ou '2' pour quitter:")
   else: 
     #input:
+    marge += (100 - surbet2)
     coteimaginairejoueur1 = 0
     coteimaginairejoueur2 = 0
     
     #calcul
-    print "->", surbet, ":pas de surbet, solution possible pour surbet"
+    print "*************INFO**************"
+    print "* bonnes cotes = retour > 90% *"
+    print "*******************************"
+    print "->retour", surbet2,"% --> marge bookmaker", marge, "%"
+    print "solution pendant le jeux pour surbet:"
     if cotepremierjoueur < cotedeuxiemejoueur:
       ratio1 = 1.1
       surbetavecratio = surbet
       while surbetavecratio > 1:
-        ratio1 += 0.1
+        ratio1 += 0.01
         surbetavecratio = ((1 / cotepremierjoueur) + (1 / ratio1))
       print "-> Mise sur joueur 1 (cote ", cotepremierjoueur, ")"
       print " et attend que la cote du joueur 2 > ", ratio1, " pendant le match pour faire du benefice..."
+      print "Probabilite de resultat selon Bookmaker pour info:"
+      pourcentageplusjoueur2 += ((cotedeuxiemejoueur / cote_totale) * 100)
+      print "1/", pourcentageplusjoueur2, "%", "de chance de gagner"
+      pourcentageplusjoueur1 += ((cotepremierjoueur / cote_totale) * 100)
+      print "2/", pourcentageplusjoueur1, "%", "de chance de gagner"
       print "-------------------------------------------------"
       nouveauchoix = input("'1' pour relancer  ou '2' pour quitter:")
       print "-------------------------------------------------"
@@ -95,6 +108,11 @@ while nouveauchoix == 1:
         surbetavecratio = ((1 / cotedeuxiemejoueur) + (1 / ratio1))
       print "-> Mise sur joueur 2 (cote ", cotedeuxiemejoueur, ")"
       print " et attend que la cote du joueur 1 > ", ratio1, " pendant le match pour faire du benefice..."
+      print "Probabilite de resultat selon Bookmaker pour info:"
+      pourcentageplusjoueur2 += ((cotedeuxiemejoueur / cote_totale) * 100)
+      print "1/", pourcentageplusjoueur2, "%", "de chance de gagner"
+      pourcentageplusjoueur1 += ((cotepremierjoueur / cote_totale) * 100)
+      print "2/", pourcentageplusjoueur1, "%", "de chance de gagner"
       print "-------------------------------------------------"
       nouveauchoix = input("'1' pour relancer  ou '2' pour quitter:")
       print "-------------------------------------------------"       
