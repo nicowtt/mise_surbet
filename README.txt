@@ -7,3 +7,6 @@ Le surebet, de l'anglais « sure » (« sûr ») et « bet » (« pari »), est 
 
 -> Ce programme est une aide pour trouver une situation de surbet sur le Tennis.
 
+Fonction:
+- Annonce si situation de "surbet".
+- Donne des indications de methodes de surbet pendant le match.
