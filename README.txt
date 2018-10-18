@@ -4,9 +4,9 @@ Ce programme est une aide afin de trouver les situations de surbet au tennis. Il
 ***********************************************************************************************************************************
 
 
-					*****************************
+					******************************
 					***********mise_surbet********
-					*****************************
+					******************************
 
 que veut dire surbet ?? 
 
@@ -57,7 +57,7 @@ Le programme vous demandera:
 - la côte en cours (qui doit être supérieure à la cote donnée pour aucun gain)
 -> Le programme vous annoncera la mise qu'il vous faudra parier sur le second joueur et le pourcentage de gain obligatoire.
 
------
+
 
 
 *****IMPORTANT****IMPORTANT********IMPORTANT*******IMPORTANT*********IMPORTANT**********IMPORTANT***********IMPORTANT**************
