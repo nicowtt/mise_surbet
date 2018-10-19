@@ -67,3 +67,10 @@ Le programme vous demandera:
 *****IMPORTANT****IMPORTANT********IMPORTANT*******IMPORTANT*********IMPORTANT**********IMPORTANT***********IMPORTANT**************
 Ce programme est une aide afin de trouver les situations de surbet au tennis. Il ne vous oblige en aucune manière a risquer votre argent. Jouer comporte des risques: endettement, isolement, dependance. Je décline toutes responsabilité si vous perdez de l'argent.
 ***********************************************************************************************************************************
+
+-------------------------------------------------------Contributing:--------------------------------------------------------------------
+1: Fork it
+2: Create your changes (git checkout -b my-new-feature)
+3: Commit your changes (git commit -am "add some feature")
+4: Push the branch (git push origin my-new-feature)
+5: Create new pull request
